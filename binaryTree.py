@@ -38,6 +38,6 @@ class BinaryTree:
 
 my_tree = BinaryTree()
 
-for c in ['a','b','c','d','e','f','g','h']:
-    my_tree.insert(c)
-    print(my_tree)
+# for c in ['a','b','c','d','e','f','g','h']:
+#     my_tree.insert(c)
+#     print(my_tree)
