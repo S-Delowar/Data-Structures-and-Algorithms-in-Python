@@ -14,7 +14,7 @@ class Stack:
         return val
 
     def is_empty(self):
-        self._list.size == 0
+        return self._list.size == 0
 
     def peak(self):
         return self._list.back()
