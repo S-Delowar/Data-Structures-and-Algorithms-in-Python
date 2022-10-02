@@ -1,5 +1,6 @@
 from queue import Queue
 from binaryTreePrinter import BinaryTreePrinter
+from stack import Stack
 
 
 class TreeNode:
@@ -32,12 +33,29 @@ class BinaryTree:
                     nodes.enqueue(checking_node.left)
                     nodes.enqueue(checking_node.right)
 
+    def contains(self, val):
+        nodes = Stack()
+        nodes.push(self.root)
+
+        while not nodes.is_empty():
+            node = nodes.pop()
+            print('Checking node: ', node.val)
+            if node.val == val:
+                return True
+            if node.left is not None:
+                nodes.push(node.left)
+            if node.right is not None:
+                nodes.push(node.right)
+        return False
+
     def __str__(self):
         tree_printer = BinaryTreePrinter()
         return tree_printer.get_tree_string(self.root)
 
 my_tree = BinaryTree()
 
-# for c in ['a','b','c','d','e','f','g','h']:
-#     my_tree.insert(c)
-#     print(my_tree)
+for c in [10,2,3,4,5,6,7,8,9, 20, 22]:
+    my_tree.insert(c)
+    print(my_tree)
+
+print(my_tree.contains(5))

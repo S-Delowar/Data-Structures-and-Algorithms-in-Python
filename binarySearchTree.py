@@ -46,6 +46,7 @@ class BST:
 
         while not nodes.is_empty():
             node = nodes.pop()
+            print('Checking node: ', node.val)
             if node.val == val:
                 return True
             elif val < node.val:
@@ -63,8 +64,8 @@ class BST:
 
 bst = BST()
 
-for x in [10,2,3,4,5,6,7,8,9, 20, 22]:
-    bst.insert(x)
-    print(bst)
-print(bst.in_order())
-print(bst.contains(19))
+# for x in [10,2,3,4,5,6,7,8,9, 20, 22]:
+#     bst.insert(x)
+#     print(bst)
+# print(bst.in_order())
+# print(bst.contains(5))
